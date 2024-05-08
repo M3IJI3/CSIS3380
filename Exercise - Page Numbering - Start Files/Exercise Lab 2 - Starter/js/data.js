@@ -159,4 +159,19 @@ users = [
         "image" : "https://randomuser.me/api/portraits/thumb/men/91.jpg",
         "joined" : "09/12/15"
     }
-]
+];
+
+const fs = require('fs');
+
+const jsonData = JSON.stringify(users, null, 2);
+
+fs.writeFile('users.json', jsonData, 'utf-8', (err) => {
+    if(err)
+    {
+        console.log('Error when creating file:', err);
+        return;
+    }else{
+        console.log('JSON file has been successfully created!');
+    }
+})
+

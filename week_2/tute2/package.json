@@ -1,0 +1,21 @@
+{
+  "name": "n1",
+  "version": "1.0.0",
+  "description": "this is a test",
+  "main": "n1.js",
+  "scripts": {
+    "test": "node n1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "test"
+  },
+  "keywords": [
+    "haha"
+  ],
+  "author": "Jie Mei",
+  "license": "ISC",
+  "dependencies": {
+    "cities": "^2.0.0"
+  }
+}

@@ -53,7 +53,7 @@ function displayProfiles(data)
 
         profileCard.innerHTML = `
         <div class="contact-details">
-        <img class="avatar" src="${profile.image}">
+        <img class="avatar" src="${profile.image}" alt="">
         <h3>${profile.name}</h3>
         </div>
         <div class="joined-details">

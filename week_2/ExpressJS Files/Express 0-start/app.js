@@ -23,7 +23,11 @@ app.post('/', (req, res) => {
 
     let result = Number(req.body.num1) + Number(req.body.num2);
 
-    res.send('<h1>The sum of the number is ${result}</h1>');
+    res.send(`<h1>The sum is ${result}</h1>`);
+})
+
+app.get('*', (req, res) => {
+    res.send('<h1>Page not fount.</h1>')
 })
 
 app.listen(3000, () => {

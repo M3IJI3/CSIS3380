@@ -2968,3 +2968,35 @@ users = [
         "nat": "FR"
     }
 ]
+
+const Render = (user) => {
+    const dateObject = new Date(user.registered.date);
+
+    const year = dateObject.getFullYear();
+    const month = dateObject.getMonth() + 1;
+    const day = dateObject.getDay();
+
+    return `
+        <li class="student-item cf">
+            <div class="student-details">
+                <img class="avatar" src="${user.picture.thumbnail}">
+                <h3>${user.name.first + user.name.last}</h3>
+                <span class="email">${user.email}</span>
+            </div>
+            <div class="joined-details">
+                <span class="date">Joined ${month}/${day}/${year}</span>
+           </div>
+        </li>
+    `
+}
+
+const init = () => {
+    const studentList = document.querySelector('.student-list');
+    studentList.innerHTML = '';
+
+    users.forEach(student => {
+        const userHTML = Render(student);
+        studentList.insertAdjacentHTML('beforeend', userHTML);
+    })
+}
+init();

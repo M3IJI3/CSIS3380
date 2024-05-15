@@ -22,7 +22,7 @@
 // showPage(contactItem, page)
 
 const perPage = 10;
-var currentPage = 1;
+let currentPage = 1;
 
 fetch('js/users.json')
   .then(response => response.json())

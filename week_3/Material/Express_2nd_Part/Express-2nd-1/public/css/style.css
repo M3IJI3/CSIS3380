@@ -1,0 +1,15 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    background-color: antiquewhite;
+}   
+
+body {
+    display: block;
+    margin: auto;
+    width: 70%;
+    background-color: white;
+    padding: 10px;
+}

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <title>EJS</title>
+</html>
+<body>
+
+<% if (kindOfDay === 0 || kindOfDay === 6) { %>
+    <h1 style="color: green">Day <%= kindOfDay %> (Weekend) List </h1>
+<% } else { %>
+    <h1 style="color: blue">Day <%= kindOfDay %> (Weekday) List </h1>
+<% } %>
+
+    <h1>It's a <%= kindOfDay %> !</h1>
+</body>

@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+  head
+    title Trivia Questions
+  body
+    header
+      h1 Trivia Questions
+    section#content
+      ul 
+        each colour in colours
+          li= colour
+      h2= prompt
+      if hint
+        p
+          i Hint: #{hint}
+      else
+        p No hint
+    footer
+      p A Trivia app

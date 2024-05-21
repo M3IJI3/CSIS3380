@@ -169,7 +169,6 @@ fs.writeFile('users.json', jsonData, 'utf-8', (err) => {
     if(err)
     {
         console.log('Error when creating file:', err);
-        return;
     }else{
         console.log('JSON file has been successfully created!');
     }

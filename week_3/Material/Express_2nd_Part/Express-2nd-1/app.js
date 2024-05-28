@@ -1,9 +1,11 @@
 const express = require('express');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(cookieParser());
 
 app.use('/static', express.static('public')); // static middleware, see layout.pug
 // also see footer.pug
@@ -11,6 +13,14 @@ app.use('/static', express.static('public')); // static middleware, see layout.p
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
+    const name = req.cookies.username;
+    if(name)
+    {
+        res.render('index', { name });
+    } else {
+        res.redirect('/');
+    }
+
     res.render('index');
 });
 
@@ -23,7 +33,8 @@ app.get('/hello', (req, res) => {
 });
 
 app.post('/hello', (req, res) => {
-    res.render('hello', { name: req.body.username });
+    res.cookie('username', req.body.username);
+    res.redirect('/');
 });
 
 app.listen(3000, () => {

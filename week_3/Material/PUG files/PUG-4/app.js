@@ -14,8 +14,6 @@ app.use(express.urlencoded({ extended: false}));
 //     'purple'
 // ];
 
-app.set('view engine', 'pug');
-
 app.get('/', (req, res) => {
     res.render('index');
 });

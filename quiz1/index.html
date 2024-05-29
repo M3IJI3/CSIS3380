@@ -1,0 +1,54 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+<h2>Hello User</h2>
+<form action="/" method="POST" id="userForm">
+    <input type="text" name="userName" id="username">
+    <button type="submit">Add User</button>
+</form>
+<div id="users"></div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('/users')
+            .then(response => response.json())
+            .then(users => {
+                const userList = document.getElementById('users');
+                userList.innerHTML = '';
+                users.forEach((user, index) => {
+                    const userElement = document.createElement('div');
+                    userElement.textContent = `user ${index + 1}: ${user}`;
+                    userList.appendChild(userElement);
+                });
+            });
+    });
+
+    document.getElementById('userForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const userName = document.querySelector('input[name="userName"]').value;
+        fetch('/add-user', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: `userName=${userName}`,
+        })
+            .then(response => response.json())
+            .then(data => {
+                const userList = document.getElementById('userList');
+                const userElement = document.createElement('div');
+                userElement.textContent = `user ${data.index}: ${data.name}`;
+                userList.appendChild(userElement);
+                document.querySelector('input[name="userName"]').value = '';
+            });
+    });
+</script>
+</body>
+</html>

@@ -2996,7 +2996,7 @@ const init = () => {
 
     users.forEach(student => {
         const userHTML = Render(student);
-        studentList.insertAdjacentHTML('beforeend', userHTML);
+        studentList.insertAdjacentHTML('beforeend', userHTML); 
     })
 }
 init();

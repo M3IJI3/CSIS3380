@@ -37,7 +37,7 @@ const Player = (props) => {
         { props.name }
       </span>
 
-      <Counter score={props.score} />
+      <Counter />
     </div>
   );
 }
@@ -48,18 +48,17 @@ class Counter extends React.Component {
   }
 
   incrementScore = () => {
-    this.setState({
-      score: this.state.score + 1
-    }) 
-    // console.log("Hi, this is a log form incrementScore.")
+    this.setState( prevState => ({
+      score: prevState.score + 1
+    }));
   }
 
   decrementScore = () => {
     if (this.state.score > 0)
     {
-      this.setState({
-        score: this.state.score - 1
-      })
+      this.setState( prevState => ({
+        score: prevState.score - 1
+      }))
     }
   }
 

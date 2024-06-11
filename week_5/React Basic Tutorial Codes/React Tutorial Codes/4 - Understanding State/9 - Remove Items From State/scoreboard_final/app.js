@@ -78,6 +78,21 @@ class App extends React.Component {
     });
   }
 
+//   handleRemovePlayer = (id) => {
+//     this.setState( prevState => {
+//         const index = prevState.players.findIndex(p => p.id === id);
+//         if (index !== -1) {
+//             const newPlayers = [...prevState.players];
+//             newPlayers.splice(index, 1);
+//             return {
+//                 players: newPlayers
+//             };
+//         }
+//         return null; 
+//     });
+// }
+
+
   render() {
     return (
       <div className="scoreboard">

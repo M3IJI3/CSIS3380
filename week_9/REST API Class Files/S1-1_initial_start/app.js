@@ -65,4 +65,10 @@ app.delete('/quotes/:id', async(req,res) =>{
     res.json({message: "Quote successfully deleted."});
 })
 
+// get a random quote
+app.post('/quotes/random', async (req,res) =>{
+    const quote = await records.getRandomQuote();
+    res.json(quote);
+})
+
 app.listen(3000, () => console.log('Quote API listening on port 3000!'));

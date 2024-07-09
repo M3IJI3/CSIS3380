@@ -66,7 +66,7 @@ app.delete('/quotes/:id', async(req,res) =>{
 })
 
 // get a random quote
-app.post('/quotes/random', async (req,res) =>{
+app.get('/randomquote', async (req,res) =>{
     const quote = await records.getRandomQuote();
     res.json(quote);
 })

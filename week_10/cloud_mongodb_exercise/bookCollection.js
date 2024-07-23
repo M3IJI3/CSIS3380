@@ -1,7 +1,7 @@
 const Book = require('./db');
 const mongoose = require('mongoose');
 
-// read and display data in table
+// read and display
 Book.find({})
     .then(books => {
         console.log("All Books:");

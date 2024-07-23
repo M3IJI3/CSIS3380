@@ -34,7 +34,6 @@ const CountriesList = () => {
                 setLoading(false);
             }
         };
-
         fetchCountries();
     }, []);
 

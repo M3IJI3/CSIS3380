@@ -6,7 +6,6 @@ import SearchForm from './SearchForm';
 import GifList from './GifList';
 
 function App() {
-
   return (
     <>
       <div className="main-header">
